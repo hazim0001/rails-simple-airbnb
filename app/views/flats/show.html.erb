@@ -1,0 +1,73 @@
+<div class="map backgroundimg">
+  <div class="container d-flex">
+
+
+    <div class="widthhalf">
+      <div class="card p-2 bggray">
+        <h1> <%= @flat.name %> </h1>
+        <p> <%= @flat.address %> </p>
+      </div>
+
+      <div class="card p-2 mt-2 bggray">
+        <h3>More about this flat</h3>
+        <p> <%= @flat.description %> </p>
+      </div>
+    </div>
+
+    <div class="widthrest ml-5">
+      <div class="card p-3">
+        <h4>Book this flat</h4>
+        <form>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInputGroup">1/1/2021</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">From</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="1/1/2021">
+              </div>
+            </div>
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInputGroup">1/1/2021</label>
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">to</div>
+                </div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="1/1/2021">
+              </div>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-success mb-2 btn-block">Book</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="card bggray p-3 mt-2">
+        <h5>Details</h5>
+         <i class="fas fa-user-friends list-inline-item"></i><%= @flat.price_per_night %>
+         <i class="fas fa-dollar-sign list-inline-item"></i><%= @flat.number_of_guests %>
+      </div>
+
+      <div class="card bggray p-3 mt-2">
+        <ul class="list-inline text-right">
+          <!-- <li class="list-inline-item">Lorem ipsum</li>
+          <li class="list-inline-item">Phasellus iaculis</li>
+          <li class="list-inline-item">Nulla volutpat</li> -->
+          <i class="text-left mr-3">Share</i>
+          <i class="fab fa-facebook-square largefont"></i>
+          <i class="fab fa-twitter-square largefont"></i>
+          <i class="fab fa-pinterest-square largefont"></i>
+          <i class="fas fa-envelope-square largefont"></i>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+<%= link_to 'Edit this post', edit_flat_path(@flat) %>
+<%= link_to 'Delete this post', flat_path(@flat), method: :delete, data: {confirm: 'are you sure u wanna delete that?'} %>

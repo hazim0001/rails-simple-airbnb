@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="mt-1"> All our Flats</h1>
+  <p class="mt-1">all <%=@flats.count%> flats  </p>
+
+  <ul>
+    <% @flats.each do |flat|%>
+    <li>  <%=link_to flat.name, flat_path(flat.id)%>- <%= flat.price_per_night %> </li>
+    <% end %>
+  </ul>
+
+</div>
